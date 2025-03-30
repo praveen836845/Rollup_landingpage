@@ -1,0 +1,15 @@
+Espresso ↔ Rollup
+In order to keep HotShot nodes themselves as generic and simple as possible, there is no rollup-specific logic in Espresso itself, and thus Espresso never actively communicates with any rollup. Instead, HotShot query service nodes present a public interface which rollups are expected to query in order to integrate with Espresso. This interface takes the form of a REST API. See the API reference for details.
+
+Usage
+Rollup nodes may use these APIs differently depending on the role they are playing in the system (e.g., prover, full node, etc.). A prover can use the API to stream block data from a node, so that it can execute blocks as they are finalized and generate proofs. The prover also interacts with the L1, since it can only verify a rollup proof on the L1 if the L1 has already verified the sequencing of the corresponding block.
+
+
+Prover / Sequencer Integration
+A rollup may also include full nodes which store and provide access to rollup-related state, but do not run a prover. Such a full node can stream blocks and verify consensus proofs (QCs) directly from the HotShot APIs, without interacting with the L1. Avoiding interaction with the L1 allows state updates to be computed faster.
+
+
+Full Node / Sequencer Integration
+The rollup also interacts with HotShot via the submit API. This interaction is completely independent of the streaming interaction illustrated above. It is simply used to add transactions to HotShot’s mempool so that they may eventually be included in the sequence. Any rollup node which serves a rollup API (e.g. JSON-RPC) should be able to handle transaction submissions through HotShot's submit API.
+
+The body of submit requests includes the transaction to submit as well as a rollup-specific numeric identifier. This identifier is associated with the transaction in the final sequence, so rollup proofs can use the ID to easily exclude transactions intended for other rollups. Each rollup should have its own protections against cross-rollup replay attacks, such as an EVM chain ID, in addition to this rollup ID.

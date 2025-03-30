@@ -1,0 +1,10 @@
+Espresso's Global Confirmation Network is a shared source of truth that provides secure confirmations for transaction ordering and data across chains. It leverages a BFT consensus protocol called HotShot.
+
+Rollup transactions are processed by HotShot consensus and confirmed within a few seconds. By sharing the same Global Confirmation Network, chains have certainty within seconds about what state will eventually be finalized on the L1. This is achieved by preventing sequencers from changing a transaction sequence after it has been confirmed by HotShot, which can happen within only a few seconds (long before settlement on Ethereum).
+
+Compared to relying on a disparate set of centralized sequencers for pre-confirmations, sharing a decentralized consensus protocol as a Global Confirmation Network bolsters the L2 ecosystem as a whole against equivocation of pre-confirmations that may occur as a result of hacks or bad actors. Applications that interact between multiple chains, such as bridges, are especially sensitive to the quality of confirmations of individual chains they are involved with. 
+
+This is reflected by the fact that for many of the largest bridge providers today, the waiting time for moving funds away from a rollup is around 15 minutes; the time it takes for the bridging transaction to be finalized inside a blob or as calldata on Ethereum. With HotShot, bridging between rollups can be done in a manner of seconds, as opposed to waiting 15 minutes for transactions to finalize on the Ethereum L1, with similar security guarantees. 
+
+The confirmation guarantees of HotShot mirror that of Ethereum L1. Once HotShot confirms a transaction reached, an adversary would need to control at least 1/3rd of the overall stake to revert said transaction. Combined with restaking, this means that HotShot's safety guarantee can approach that of Ethereum L1 over time. In the event that safety is broken, the adversary's stake will be slashed, making it very expensive to undo confirmations in HotShot. 
+
