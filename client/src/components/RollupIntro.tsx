@@ -520,7 +520,7 @@ const RollupIntro = () => {
                     <h3 className="text-lg font-medium">AWS Deployment</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Espresso Rollup is ready for AWS deployment, leveraging the platform's scale, reliability and security 
+                   Omni Rollup is ready for AWS deployment, leveraging the platform's scale, reliability and security 
                     features for production-grade blockchain infrastructure.
                   </p>
                 </CardContent>

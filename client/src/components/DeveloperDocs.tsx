@@ -41,12 +41,12 @@ const RollUpDependencies = `
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Developer Documentation</h2>
             <p className="text-xl text-muted-foreground">
-              Comprehensive resources to help you build on Espresso Rollup
+              Comprehensive resources to help you build on Omni Rollup
             </p>
           </div>
 
           <Card className="backdrop-blur-md bg-card/70 rounded-xl overflow-hidden border border-primary/20 p-6 md:p-10">
-            <h3 className="text-2xl font-semibold mb-6">Getting Started with Espresso Rollup</h3>
+            <h3 className="text-2xl font-semibold mb-6">Getting Started with Omni Rollup</h3>
 
             <div className="mb-8">
               <h4 className="text-xl font-medium mb-3">Prerequisites</h4>
@@ -72,7 +72,7 @@ const RollUpDependencies = `
             </div>
 
             <div className="mb-8">
-              <h4 className="text-xl font-medium mb-3">Connect to Espresso Rollup</h4>
+              <h4 className="text-xl font-medium mb-3">Connect to Omni Rollup</h4>
               <CodeBlock code={connectRollup} language="typescript" />
             </div>
 
