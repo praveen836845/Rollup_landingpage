@@ -6,23 +6,18 @@ const DeveloperDocs = () => {
   const installCode = `To interact with our rollup, first install MetaMask (https://metamask.io/download/). 
   Then, add our custom RPC using the following steps:  
 
-1. Open MetaMask and go to Settings > Networks > Add Network.  
-2. Enter the following details:  
-   - Network Name: Our Rollup  
-   - New RPC URL: [YOUR_ROLLUP_RPC_URL]  
-   - Chain ID: [YOUR_CHAIN_ID]  
-   - Currency Symbol: [NATIVE_TOKEN]  
-   - Block Explorer URL: [EXPLORER_URL]  
+1. Open MetaMask and go to Settings > Networks > Add Network. `;
+
+  const connectRollup = `
+
+// Connect Rollup
+2. Enter the following details in Add Network:  
+   - Network Name: happyrollup 
+   - New RPC URL: http://65.0.119.186:8547  
+   - Chain ID: 78149
+   - Currency Symbol: ETH
+   - Block Explorer URL: N/A
 3. Click Save, then switch to the newly added network.`;
-
-  const connectRollup = `import { EspressoRollupProvider } from '@espresso-rollup/sdk';
-
-// Initialize provider
-const provider = new EspressoRollupProvider('https://rpc.espresso-rollup.com');
-
-// Get rollup chain ID
-const chainId = await provider.getChainId();
-console.log('Connected to chain:', chainId);`;
 
   const ConnectWallet = `Once the network is added, connect your MetaMask wallet to our rollup to start interacting with smart
 contracts.`

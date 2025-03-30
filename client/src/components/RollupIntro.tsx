@@ -387,16 +387,16 @@ const RollupIntro = () => {
   <div 
     className={`flex flex-col md:flex-row gap-5 justify-center mt-20 ${isAnimated ? 'opacity-100' : 'opacity-0'}`}
   >
-    <Button 
+    {/* <Button 
       onClick={() => window.dispatchEvent(new CustomEvent('scrollToSection', { detail: { targetId: 'how-it-works' } }))}
       size="lg"
       className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-7 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl group"
     >
       <span>Portal Architecture</span>
       <ArrowRightCircle className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-    </Button>
+    </Button> */}
     
-    <Button
+    {/* <Button
       onClick={() => window.dispatchEvent(new CustomEvent('scrollToSection', { detail: { targetId: 'docs' } }))}
       variant="outline"
       size="lg"
@@ -404,7 +404,7 @@ const RollupIntro = () => {
     >
       <Code className="h-5 w-5 mr-2 group-hover:rotate-12 transition-transform" />
       <span>Developer Portal</span>
-    </Button>
+    </Button> */}
   </div>
  
   <div className="mt-28 grid grid-cols-1 md:grid-cols-3 gap-8">
