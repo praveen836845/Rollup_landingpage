@@ -63,3 +63,20 @@ app.use((req, res, next) => {
     log(`serving on port ${port}`);
   });
 })();
+
+// Background worker logic
+async function startWorker() {
+  log("Worker process started...");
+
+  while (true) {
+    try {
+      log("Processing background task...");
+      await new Promise((resolve) => setTimeout(resolve, 180000)); // Runs every 3 min
+    } catch (error) {
+      log("Worker error: " + error);
+    }
+  }
+}
+
+startWorker();
+
